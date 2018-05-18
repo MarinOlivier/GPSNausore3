@@ -31,13 +31,17 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_nav:
                     //mTextMessage.setText(R.string.title_home);
                     if (_navFrag == null)
                         _navFrag = NavFragment.newInstance();
                     selectedFragment = _navFrag;
                     break;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_bluetooth:
+                    //mTextMessage.setText(R.string.title_dashboard);
+                    selectedFragment = BluetoothFragment.newInstance();
+                    break;
+                case R.id.navigation_settings:
                     //mTextMessage.setText(R.string.title_dashboard);
                     selectedFragment = SettingsFragment.newInstance();
                     break;
