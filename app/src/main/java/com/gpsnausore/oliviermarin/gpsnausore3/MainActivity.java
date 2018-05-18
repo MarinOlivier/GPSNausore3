@@ -18,7 +18,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements PermissionsListener, LocationEngineListener {
+public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private MapboxMap _mapboxmap;
@@ -58,10 +58,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Fragment selectedFragment = null;
-        selectedFragment = NavFragment.newInstance();
+        _navFrag = NavFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, selectedFragment);
+        transaction.replace(R.id.frame_layout, _navFrag);
         transaction.commit();
     }
 
@@ -71,30 +70,5 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     public MapboxMap getMapboxmap() {
         return _mapboxmap;
-    }
-
-    @Override
-    public void onExplanationNeeded(List<String> permissionsToExplain) {
-
-    }
-
-    @Override
-    public void onPermissionResult(boolean granted) {
-        if (granted) {
-            _navFrag.enableLocationPlugin();
-        } else {
-            Toast.makeText(this, R.string.user_location_permission_not_granted, Toast.LENGTH_LONG).show();
-            finish();
-        }
-    }
-
-    @Override
-    public void onConnected() {
-
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-
     }
 }
