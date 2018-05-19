@@ -123,7 +123,7 @@ public class NavFragment extends Fragment implements OnMapReadyCallback, Permiss
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_nav, container, true);
+        return inflater.inflate(R.layout.fragment_nav, container, false);
     }
 
     @Override

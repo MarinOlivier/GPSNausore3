@@ -3,13 +3,16 @@
     package="com.gpsnausore.oliviermarin.gpsnausore3">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -20,5 +23,7 @@
             </intent-filter>
         </activity>
     </application>
+
+
 
 </manifest>

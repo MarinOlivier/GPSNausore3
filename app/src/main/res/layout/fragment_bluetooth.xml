@@ -1,21 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.gpsnausore.oliviermarin.gpsnausore3.MainActivity"
-android:orientation="vertical">
-
-
-<Button
-    android:id="@+id/bleButton"
-    style="@android:style/Widget.DeviceDefault.Light.Button"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/holo_red_dark"
-    android:text="@string/bleEnable"
-    android:textColor="@android:color/background_light"
-    android:textStyle="bold"
-    android:visibility="visible" />
+    android:layout_height="match_parent"
+    tools:context="com.gpsnausore.oliviermarin.gpsnausore3.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/devicesText"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Paired Devices"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/list_paired_devices"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ListView>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/DevicesText"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Availabe Devices"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_scan_blt"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Scan" />
+    </TableRow>
+
+    <ListView
+        android:id="@+id/list_av_devices"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ListView>
 
 </LinearLayout>
